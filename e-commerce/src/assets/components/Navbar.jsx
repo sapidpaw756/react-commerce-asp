@@ -28,35 +28,35 @@ export default function Navbar() {
                 <ul className='container mx-auto flex flex-wrap justify-between md:flex-row px-4 md:px-2 items-center relative'>
                     <div className='flex gap-4'>
                         <li>
-                            <Link to={import.meta.env.VITE_APP_BASE}>Home</Link>
+                            <Link to='/'>Home</Link>
                         </li>
                         <li>
-                            <Link to={import.meta.env.VITE_APP_BASE}>About</Link>
+                            <Link to='/'>About</Link>
                         </li>
                         <li>
-                            <Link to={import.meta.env.VITE_APP_BASE}>FAQs</Link>
+                            <Link to='/'>FAQs</Link>
                         </li>
                         <li>
-                            <Link to={import.meta.env.VITE_APP_BASE}>Contact</Link>
+                            <Link to='/'>Contact</Link>
                         </li>
                     </div>
                     <div className={`${isOpen ? 'flex flex-col absolute right-0 md:right-0 top-12 z-10 bg-zinc-50 p-4 gap-4' : 'hidden' }`}>
-                        <li><Link to={import.meta.env.VITE_APP_BASE}>Sign</Link></li>
-                        <li><Link to={import.meta.env.VITE_APP_BASE}>My Account</Link></li>
+                        <li><Link to='/'>Sign</Link></li>
+                        <li><Link to='/'>My Account</Link></li>
                     </div>
                     <User size={40} className='bg-gray-200 p-2 text-black rounded cursor-pointer' onClick={handleUser}/>
                 </ul>
             </div>
             <nav className='flex justify-between items-center container mx-auto md:py-6 py-8 px-2'>  
                 <div className='flex items-center'>
-                    <Link to={import.meta.env.VITE_APP_BASE} className='bg-gray-700 py-2 px-4 rounded'>
+                    <Link to='/' className='bg-gray-700 py-2 px-4 rounded'>
                         <img src={logo} alt='' className='h-6'/>
                     </Link>
                 </div>
                 <form className='w-1/2 sm:block hidden'>
                     <input type='text' placeholder='Search Product' className='bg-zinc-100 rounded-md border border-zinc-200 focus:outline-none p-3 w-full' value={searchTerm} onChange={(e)=> dispatch(setSearchTerm(e.target.value))} />
                 </form>
-                <Link to={import.meta.env.VITE_APP_BASE+'cart'} className='relative'>
+                <Link to={'/cart'} className='relative'>
                     <ShoppingCart size={44} className='cursor-pointer bg-gray-100 py-2 px-3 rounded-full' />
                     {itemCount > 0 &&(
                         <span className='absolute -top-2 -right-1 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center'>{itemCount}</span>

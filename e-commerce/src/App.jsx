@@ -10,12 +10,12 @@ import { store } from './App/Store';
 function App() {
   return( 
     <Provider store={store}>
-      <BrowserRouter >
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Navbar/>
         <Routes>
-          <Route path="/react-commerce-asp/" element={<Home/>} />
-          <Route path="/react-commerce-asp/product/:id" element={<ProductDetails/>} />
-          <Route path="/react-commerce-asp/cart" element={<CartPage/>} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/product/:id" element={<ProductDetails/>} />
+          <Route path="/cart" element={<CartPage/>} />
         </Routes>
       </BrowserRouter>
     </Provider>
