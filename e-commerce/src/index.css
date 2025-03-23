@@ -11,6 +11,10 @@ body{
 
 .bg{
     background: url('./assets/imgs/temp-bg.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 70vh;
+    height: 30vh;
+    @media only screen and (min-width: 992px) {
+        height: 70vh;
+    }
 }
