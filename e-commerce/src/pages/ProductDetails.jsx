@@ -15,7 +15,7 @@ function ProductDetails() {
     return <div className='container mx-auto px-4 py-8'>
       <div className='text-center'>
         <h2 className='text-2l font-bold mb-4'>Product Not Found</h2>
-        <Link to="/" className='text-blue-600 hover:text-blue-800'>Return to Home</Link>
+        <Link to={import.meta.env.VITE_APP_BASE} className='text-blue-600 hover:text-blue-800'>Return to Home</Link>
       </div>
     </div>
   }
@@ -23,7 +23,7 @@ function ProductDetails() {
   return (
     <div className='container mx-auto px-4 py-8'>
       <div>
-        <Link to='/' className='mb-8 inline-block'>Back to Products</Link>
+        <Link to={import.meta.env.VITE_APP_BASE} className='mb-8 inline-block'>Back to Products</Link>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
           <div className='shadow-md p-4 rounded rounded w-[600px]'>
             <img src={product.image} alt={product.title} />

@@ -16,7 +16,7 @@ function CartPage() {
         <div className='text-center'>
           <h2>Your Cart is Empty</h2>
           <p className='text-gray-600 mb-4'>Add Some Products to Your Cart to see them here</p>
-          <Link to='/' className="inline-block bg-zinc-200 px-6 py-2 rounded-lg hover:bg-zinc-300">Continue Shopping</Link>
+          <Link to={import.meta.env.VITE_APP_BASE} className="inline-block bg-zinc-200 px-6 py-2 rounded-lg hover:bg-zinc-300">Continue Shopping</Link>
         </div>
     </div>
   }
@@ -28,11 +28,11 @@ function CartPage() {
         <div className='lg:col-span-2 shadow-md p-4 rounded-md'>
           {cartItems.map((item) => (
             <div key={item.id} className='flex items-center gap-4 py-4 border-b'>
-              <Link to={`/product/${item.id}`}>
+              <Link to={`${import.meta.env.VITE_APP_BASE}product/${item.id}`}>
                 <img src={item.image} alt={item.title} className='w-24 h-24 object-cover rounded' />
               </Link>
               <div className='flex-1'>
-                <Link to={`/product/${item.id}`} className="font-semibold hover:text-blue-600">
+                <Link to={`${import.meta.env.VITE_APP_BASE}product/${item.id}`} className="font-semibold hover:text-blue-600">
                   {item.title}
                 </Link>
                 <p className='text-gray-600'>${item.price.toFixed(2)}</p>

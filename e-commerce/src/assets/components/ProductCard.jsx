@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 function ProductCard({product}) {
 
   return (
-    <Link to={`/product/${product.id}`}>
+    <Link to={`${import.meta.env.VITE_APP_BASE}product/${product.id}`}>
         <div className='shadow-lg rounded-md cursor-pointer'>
             <img src={product.image} className='h-40 object-cover w-full'/>
             <div className='bg-gray-50 p-4'>
