@@ -36,16 +36,16 @@ function Footer() {
             <h2 className='text-2xl font-semibold my-4'> Pages</h2>
             <ul>
               <li>
-                <Link to='/'>Home</Link>
+                <Link to={import.meta.env.VITE_APP_BASE}>Home</Link>
               </li>
               <li>
-                <Link to='/'>About</Link>
+                <Link to={import.meta.env.VITE_APP_BASE}>About</Link>
               </li>
               <li>
-                <Link to='/'>FAQs</Link>
+                <Link to={import.meta.env.VITE_APP_BASE}>FAQs</Link>
               </li>
               <li>
-                <Link to='/'>Contact</Link>
+                <Link to={import.meta.env.VITE_APP_BASE}>Contact</Link>
               </li>
             </ul>
           </div>
@@ -53,16 +53,16 @@ function Footer() {
             <h2 className='text-2xl font-semibold my-4'>Category</h2>
             <ul>
               <li>
-                <Link to='/'>Monitors</Link>
+                <Link to={import.meta.env.VITE_APP_BASE}>Monitors</Link>
               </li>
               <li>
-                <Link to='/'>GPUs</Link>
+                <Link to={import.meta.env.VITE_APP_BASE}>GPUs</Link>
               </li>
               <li>
-                <Link to='/'>Laptops</Link>
+                <Link to={import.meta.env.VITE_APP_BASE}>Laptops</Link>
               </li>
               <li>
-                <Link to='/'>Power Supply</Link>
+                <Link to={import.meta.env.VITE_APP_BASE}>Power Supply</Link>
               </li>
             </ul>
           </div>

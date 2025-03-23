@@ -13,9 +13,9 @@ function App() {
       <BrowserRouter >
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/product/:id" element={<ProductDetails/>} />
-          <Route path="/cart" element={<CartPage/>} />
+          <Route path="/react-commerce-asp/" element={<Home/>} />
+          <Route path="/react-commerce-asp/product/:id" element={<ProductDetails/>} />
+          <Route path="/react-commerce-asp/cart" element={<CartPage/>} />
         </Routes>
       </BrowserRouter>
     </Provider>
