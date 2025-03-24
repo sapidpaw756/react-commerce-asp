@@ -3,6 +3,10 @@ import ProductGrid from '../assets/components/ProductGrid';
 import Footer from '../assets/components/Footer';
 import { useDispatch } from 'react-redux';
 import { setSelectedCategory } from '../features/products/ProductSlice';
+import logo from '../assets/imgs/GPU/Asus ProArt GeForce RTX 4070.jpg';
+import logo1 from '../assets/imgs/GPU/GeForce RTX 5080.jpg';
+import logo2 from '../assets/imgs/GPU/GeForce RTX 5090.jpg';
+import logo3 from '../assets/imgs/Laptops/Legion 7i 16inch Gen 9 - Eclipse Black.jpg';
 
 const categories =[
   "All",
