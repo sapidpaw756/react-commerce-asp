@@ -14,7 +14,7 @@ const products = [
         price: 999.00,
         category: "Graphics Cards",
         description: "Gear up for game-changing experiences with the NVIDIA® GeForce RTX™ 5080 and AI-powered DLSS 4. Built with NVIDIA Blackwell and equipped with blistering-fast GDDR7 memory, it lets you run the most graphically demanding games and creative applications with stunning fidelity and performance. With NVIDIA Studio you can bring your creative projects to life faster than ever.",
-        // image: "dist/assets/imgs/GeForkce RTX 5080-Ca94-niA.jpg",
+        // image: "dist/assets/imgs/GeForce RTX 5080-Ca94-niA.jpg",
         image: "assets/imgs/GeForce RTX 5080-Ca94-niA.jpg"
     },
     {
