@@ -25,7 +25,7 @@ function ProductDetails() {
     <div className='bg-skin-black'>
       <div className='container mx-auto px-4 py-8'>
         <div>
-          <Link to='/' className='mb-8 inline-block'>Back to Products</Link>
+          <Link to='/' className='mb-8 text-white inline-block'>Back to Products</Link>
           <div className='grid grid-cols-1 xl:grid-cols-2 gap-8 items-center'>
             <div className='shadow-md p-4 rounded rounded w-100 lg:w-[600px] '>
               <img src={import.meta.env.BASE_URL+product.image} alt={product.title} />
