@@ -1,17 +1,24 @@
 import { ShoppingCart } from 'lucide-react'
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom'
 import { addToCart } from '../features/cart/cartSlice';
 import Footer from '../assets/components/Footer';
+import { fetchTodo } from '../features/products/ProductSlice';
+
 
 function ProductDetails() {
 
   const {id} = useParams();
   const dispatch = useDispatch();
 
-  const product  = useSelector((state) =>  state.product.items.find((p) => p.id === parseInt(id)));
+   useEffect(()=>{
+     dispatch(fetchTodo())
+   },[])
 
+  const product  = useSelector((state) => state.product.items.find((p) => p.id === id));
+
+  
   if(!product){
     return <div className='container mx-auto px-4 py-8'>
       <div className='text-center'>

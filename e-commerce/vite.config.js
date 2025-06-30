@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: "/react-commerce-asp/",
+  link: "http://localhost:3000/api/",
   build: {
     rollupOptions: {
       output: {

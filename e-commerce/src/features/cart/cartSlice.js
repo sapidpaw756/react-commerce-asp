@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { useMemo } from 'react';
 
 let initialState = {
-    items: [],
+    items: [],    
+    errorCode: 0
 }
 
 
@@ -47,10 +48,15 @@ const cartSlice = createSlice({
             if(item){
                 item.quantity = action.payload.quantity;
             }
+        },//remove all order
+        removeCart: (state,action) =>{
+            state.errorCode = 0;
+            state.items = [];
+            localStorage.removeItem("cartItems");
         }
     }
 
 })
 
-export const {addToCart, removeFromCart, updateQuantity} = cartSlice.actions;
+export const {addToCart, removeFromCart, updateQuantity, removeCart} = cartSlice.actions;
 export default cartSlice.reducer

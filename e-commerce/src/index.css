@@ -87,5 +87,24 @@ body{
         transform: translate3d(-50%, 0, 0);
     }
 }
-  
+
+.modal-sign-in{
+    text-align:center;
+    &:focus-visible{
+        outline: 0;
+    }
+    button{
+        margin-top:10px;
+        margin-bottom: 20px;
+    }
+    .register-link{
+        color: #3B71CA;
+    }
+}
+
+.error{
+    color: red;
+    display: block;
+    font-size: 16px;
+}
 

@@ -1,11 +1,12 @@
 {
   "homepage": "https://sapidpaw756.github.io/react-commerce-asp",
   "name": "e-commerce",
+  "proxy": "http://localhost:3000",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -13,8 +14,13 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.1.2",
     "@reduxjs/toolkit": "^2.6.1",
+    "axios": "^1.10.0",
     "dotenv": "^16.4.7",
+    "http-proxy-middleware": "^3.0.5",
     "lucide": "^0.475.0",
     "lucide-react": "^0.475.0",
     "react": "^19.0.0",
@@ -22,6 +28,7 @@
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.2.0",
+    "react-toastify": "^11.0.5",
     "swiper": "^11.2.6"
   },
   "devDependencies": {

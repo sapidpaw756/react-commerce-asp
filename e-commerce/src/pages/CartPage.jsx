@@ -2,14 +2,70 @@ import { Minus, Plus, Trash2 } from 'lucide-react';
 import React , {useState, useEffect , useMemo}from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link , useParams } from 'react-router-dom';
-import { removeFromCart, updateQuantity } from '../features/cart/cartSlice';
+import { fetchOrder } from '../features/order/OrderSlice';
+import { removeFromCart, updateQuantity, removeCart } from '../features/cart/cartSlice';
 import Footer from '../assets/components/Footer';
+import axios from 'axios';
+import { ToastContainer, toast , Bounce} from 'react-toastify';
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 500,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4
+};
 
 function CartPage() {
 
   const dispatch = useDispatch();
 
   let cartItems = useSelector((state) => state.cart.items);
+
+  const checkOut = async () =>{
+
+        const model = [];
+
+        for (const elem of cartItems) {
+          model.push({"productId":elem.id,"count": elem.quantity,"userId": localStorage.getItem('userName').slice(0,10)});
+        }
+ 
+        await axios.post(`${import.meta.env.VITE_SERVICE_LINK}orders`,  model, {
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization" : `Bearer ${localStorage.getItem('userSession')}`
+            }
+        }).then((response) => {
+            if(response.request.status == 200){
+                toast.success("Successfully Checkout!", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Bounce,
+                });
+                dispatch(removeCart());
+                const orderModal = {
+                    id: localStorage.getItem('userName'),
+                    token : localStorage.getItem('userSession')
+                }
+                dispatch(fetchOrder(orderModal));
+            }
+        })
+        .catch(function (err) {
+            if(err.response.status == 404){
+                setisError('Invalid username or password');
+            }
+        });
+  }
 
   useMemo(() => {
     if(cartItems === null){
@@ -64,7 +120,7 @@ function CartPage() {
                   <Link to={`/product/${item.id}`} className="font-semibold hover:text-blue-600">
                     {item.title}
                   </Link>
-                  <p className='text-gray-600'>${item.price.toFixed(2)}</p>
+                  <p className='text-gray-600'>${parseInt(item.price).toFixed(2)}</p>
                   <div className='flex items-center gap-2 mt-2'>
                     <button className='p-1 rounded-full hover:bg-gray-100' onClick={() => 
                       dispatch(updateQuantity({id: item.id, quantity: Math.max(0, item.quantity - 1)}))}>
@@ -108,7 +164,7 @@ function CartPage() {
                   </div>
                 </div>
               </div>
-              <button className='w-full bg-zinc-200 px-6 py-3 rounded-lg hover:bg-zinc-300'>Proceed to Checkout</button>
+              <button className='w-full bg-zinc-200 px-6 py-3 rounded-lg hover:bg-zinc-300' onClick={checkOut}>Proceed to Checkout</button>
             </div>
           </div>
         </div>
