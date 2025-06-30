@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import ProductCard from './ProductCard';
 import { useSelector , useDispatch} from 'react-redux';
 import { fetchTodo } from '../../features/products/ProductSlice';
+const gallery = Object.values(import.meta.glob('@assets/imgs/products/*.{png,jpg,jpeg,PNG,JPEG,webp}', { eager: true, as: 'url' }))
 
 function ProductGrid() {
   const dispatch = useDispatch();
