@@ -7,7 +7,7 @@ function ProductCard({product}) {
   return (
     <Link to={`/product/${parseInt(product.id)}`}>
         <div className='shadow-lg rounded-md cursor-pointer'>
-            <img src={import.meta.env.BASE_URL + product.image} className='h-40 object-cover w-full'/>
+            <img src={import.meta.env.BASE_URL + import.meta.env.VITE_IMG_PATH + product.image} className='h-40 object-cover w-full'/>
             <div className='bg-gray-50 p-4'>
                 <h2 className='text-lg font-semibold my-4'>
                     {product.title.substring(0, 20) + '...'}

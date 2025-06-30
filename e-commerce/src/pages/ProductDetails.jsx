@@ -35,7 +35,7 @@ function ProductDetails() {
           <Link to='/' className='mb-8 text-white inline-block'>Back to Products</Link>
           <div className='grid grid-cols-1 xl:grid-cols-2 gap-8 items-center'>
             <div className='shadow-md p-4 rounded rounded w-100 lg:w-[600px] '>
-              <img src={import.meta.env.BASE_URL+product.image} alt={product.title} />
+              <img src={import.meta.env.BASE_URL+ import.meta.env.VITE_IMG_PATH +product.image} alt={product.title} />
             </div>
             <div>
                 <h1 className='text-3xl text-white font-bold mb-4'>{product.title}</h1>

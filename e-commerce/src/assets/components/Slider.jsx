@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import bg1 from '/dist/assets/imgs/temp-bg.jpg';
-import bg2 from '/dist/assets/imgs/laptop_legion.jpg';
-import bg3 from '/dist/assets/imgs/monitors.jpg';
-import bg4 from '/dist/assets/imgs/power_supply.jpg';
+import bg1 from '/src/assets/imgs/temp-bg.jpg';
+import bg2 from '/src/assets/imgs/laptop_legion.jpg';
+import bg3 from '/src/assets/imgs/monitors.jpg';
+import bg4 from '/src/assets/imgs/power_supply.jpg';
 
 
 // Import Swiper styles
