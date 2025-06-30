@@ -11,20 +11,20 @@ export default defineConfig({
   link: "http://localhost:3000/api/",
   build: {
     rollupOptions: {
-      // input: Object.fromEntries(
-      //   globSync(['src/**/*.jpg','src/assets/imgs/products/*.webp']).map(file => [
-      //     // This removes `src/` as well as the file extension from each
-      //     // file, so e.g. src/nested/foo.js becomes nested/foo
-      //     path.relative(
-      //       'src',
-      //       file.slice(0, file.length - path.extname(file).length)
-      //     ),
-      //     // This expands the relative paths to absolute paths, so e.g.
-      //     // src/nested/foo becomes /project/src/nested/foo.js
+      input: Object.fromEntries(
+        globSync(['src/**/*.jpg','src/assets/imgs/products/*.webp']).map(file => [
+          // This removes `src/` as well as the file extension from each
+          // file, so e.g. src/nested/foo.js becomes nested/foo
+          path.relative(
+            'src',
+            file.slice(0, file.length - path.extname(file).length)
+          ),
+          // This expands the relative paths to absolute paths, so e.g.
+          // src/nested/foo becomes /project/src/nested/foo.js
 
-      //     fileURLToPath(new URL(file, import.meta.url))
-      //   ])
-      // ),
+          fileURLToPath(new URL(file, import.meta.url))
+        ])
+      ),
       output: {
 
         chunkFileNames: 'assets/js/[name]-[hash].js',
