@@ -16,20 +16,20 @@ export default defineConfig({
 
         assetFileNames: ({ name }) => {
 
-          console.log(name);
+
           if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
-            return 'assets/imgs/[name]-[hash][extname]';
+            return 'assets/imgs/[name][extname]';
           }
 
           if (/\/src\/assets\/locales\/.*\.jpg$/.test(name ?? '')) {
-            return 'assets/imgs/[name]-[hash][extname]';
+            return 'assets/imgs/[name][extname]';
           }
 
           if (/\.css$/.test(name ?? '')) {
             return 'assets/css/[name]-[hash][extname]';
           }
 
-          return 'assets/[name]-[hash][extname]';
+          return 'assets/[name][extname]';
         },
       },
     },
