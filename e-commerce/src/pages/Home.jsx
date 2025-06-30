@@ -1,14 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductGrid from '../assets/components/ProductGrid';
 import Footer from '../assets/components/Footer';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedCategory } from '../features/products/ProductSlice';
-import logo from '../assets/imgs/GPU/Asus ProArt GeForce RTX 4070.jpg';
-import logo1 from '../assets/imgs/GPU/GeForce RTX 5080.jpg';
-import logo2 from '../assets/imgs/GPU/GeForce RTX 5090.jpg';
-import logo3 from '../assets/imgs/Laptops/Legion 7i 16inch Gen 9 - Eclipse Black.jpg';
 import Slider from '../assets/components/slider';
-
 const categories =[
   "All",
   "Graphics Cards",
@@ -18,7 +13,10 @@ const categories =[
 ];
 
 function Home() {
+
+
   const dispatch = useDispatch();
+  
 
   useEffect(() => {
     document.querySelectorAll('.cat-button').forEach(e => {
@@ -29,7 +27,9 @@ function Home() {
         }
       )});
   }, []);
- 
+
+
+
 
   return (
     <div className='bg-skin-black'>
@@ -46,6 +46,7 @@ function Home() {
         <ProductGrid />
       </div>
       <Footer />
+     
     </div>
   )
 }
